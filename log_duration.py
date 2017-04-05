@@ -3,8 +3,8 @@ import urllib.request
 import bs4
 
 def log_duration(f):
-    def wrapper(*args, **kwargs):
-        t = time.time()
+    def wrapper(*args, **kwargs): #args -в виде кортежа, kwargs - в видле словаря
+        t = time.time() #текущее время
         res = f(*args, **kwargs)
         print("Время выполнения функции: {}".format(time.time()-t))
         return res
