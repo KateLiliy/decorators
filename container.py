@@ -57,6 +57,7 @@ try:
 except IndexError:
     print('Нельзя обращаться к 0, у нас тут массив с 1')
 
+ #для проверки   
 my_list1.append(2)
 my_list2.append(1)
 my_list2.append(2)
