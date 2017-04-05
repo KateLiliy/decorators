@@ -5,17 +5,17 @@ import json
 def to_json(function_to_decorate):
     def wrapper(*args, **kwargs):
         data = function_to_decorate(*args, **kwargs)
-        if isinstance(data, dict):
-            data = json.dumps(data)
+        if isinstance(data, dict): #если dict преобразовать в json
+            data = json.dumps(data) #преобразовать в json
         return data
     return wrapper
 
 
 @to_json
 def example_func():
-    if random.randint(0, 1):
+    if random.randint(0, 1): #случайное целое число 0 ≤ N ≤ 1
         return {'message': '''I'm dictionary and you can convert me to JSON''', 'check_it': None}
-        # Формат JSON и обычные словарb в Питоне внешне не различимы, но JSON берет свое начало в JS,
+        # Формат JSON и обычные словарь в Питоне внешне не различимы, но JSON берет свое начало в JS,
         # поэтому он преобразует None в null, что и будет проверкой кодирования в JSON
     else:
         return ["I'm just a simple string data", "And I'm too!", "But together we are List!"]
